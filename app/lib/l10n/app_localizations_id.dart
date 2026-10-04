@@ -12996,4 +12996,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'Belum ada yang terekam pada periode ini';
+
+  @override
+  String get openTasks => 'Tugas terbuka';
 }

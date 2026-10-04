@@ -13022,4 +13022,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'Nog niets opgenomen in deze periode';
+
+  @override
+  String get openTasks => 'Openstaande taken';
 }

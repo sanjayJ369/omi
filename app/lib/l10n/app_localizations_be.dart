@@ -13021,4 +13021,7 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'За гэты перыяд пакуль нічога не запісана';
+
+  @override
+  String get openTasks => 'Адкрытыя задачы';
 }

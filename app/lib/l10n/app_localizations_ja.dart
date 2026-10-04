@@ -12800,4 +12800,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'この期間の記録はまだありません';
+
+  @override
+  String get openTasks => '未完了のタスク';
 }

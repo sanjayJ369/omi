@@ -13010,4 +13010,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'Šiuo laikotarpiu dar nieko neįrašyta';
+
+  @override
+  String get openTasks => 'Atviros užduotys';
 }

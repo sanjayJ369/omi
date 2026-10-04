@@ -12781,4 +12781,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => '此期间还没有任何录音';
+
+  @override
+  String get openTasks => '未完成的任务';
 }

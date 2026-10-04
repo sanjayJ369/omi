@@ -12920,4 +12920,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'ยังไม่มีการบันทึกในช่วงนี้';
+
+  @override
+  String get openTasks => 'งานที่ยังไม่เสร็จ';
 }

@@ -12893,4 +12893,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'עדיין לא הוקלט דבר בתקופה הזו';
+
+  @override
+  String get openTasks => 'משימות פתוחות';
 }

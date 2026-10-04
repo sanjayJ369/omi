@@ -13034,4 +13034,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'Все още няма записи за този период';
+
+  @override
+  String get openTasks => 'Отворени задачи';
 }

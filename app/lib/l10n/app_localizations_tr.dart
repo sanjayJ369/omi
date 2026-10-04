@@ -12999,4 +12999,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'Bu dönemde henüz kayıt yok';
+
+  @override
+  String get openTasks => 'Açık görevler';
 }

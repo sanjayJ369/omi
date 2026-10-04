@@ -12984,4 +12984,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get noRecapForPeriod => 'Chưa có gì được ghi âm trong khoảng thời gian này';
+
+  @override
+  String get openTasks => 'Nhiệm vụ đang mở';
 }
