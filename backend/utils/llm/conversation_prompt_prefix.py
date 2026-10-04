@@ -54,7 +54,7 @@ class ConversationPromptPrefix:
     transcript_segment_ids: frozenset[str] = frozenset()
     has_usable_content: bool = True
     # Non-owner people bound to a speaker cluster who said enough to name in the
-    # title (#3602), most-spoken first, plus the account owner's bound name(s).
+    # title (#3602), most-spoken first, plus the account owner's profile name.
     # Neither is rendered into ``context``, so the shared prefix bytes and cache
     # key are unchanged; the notes task carries them in its volatile suffix.
     title_people: tuple[str, ...] = ()
