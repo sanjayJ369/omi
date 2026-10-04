@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Vastaanottaja: Omi · {address}",
     "chatAppsInsightsSubtitle": "Anna Omin lähettää sinulle yhteenveto tai oivallus tänne.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Odotetaan, että napautat Aloita Telegramissa…"
+    "chatAppsTelegramWaiting": "Odotetaan, että napautat Aloita Telegramissa…",
+    "thisWeek": "Tämä viikko",
+    "busiestDay": "Kiireisin päivä",
+    "timeRecorded": "Tallennettu aika",
+    "peopleYouTalkedToMost": "Ihmiset, joiden kanssa puhuit eniten",
+    "recapPrevious": "Edellinen: {value}",
+    "noRecapForPeriod": "Tältä jaksolta ei ole vielä tallenteita"
 }

@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Kepada: Omi · {address}",
     "chatAppsInsightsSubtitle": "Benarkan Omi menghantar rumusan atau pandangan kepada anda di sini.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Menunggu anda mengetik Mula dalam Telegram…"
+    "chatAppsTelegramWaiting": "Menunggu anda mengetik Mula dalam Telegram…",
+    "thisWeek": "Minggu ini",
+    "busiestDay": "Hari paling sibuk",
+    "timeRecorded": "Masa dirakam",
+    "peopleYouTalkedToMost": "Orang yang paling kerap anda bercakap",
+    "recapPrevious": "Sebelumnya: {value}",
+    "noRecapForPeriod": "Belum ada rakaman dalam tempoh ini"
 }

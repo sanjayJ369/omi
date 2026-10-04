@@ -12995,4 +12995,24 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get chatAppsOmiPro => 'OMI PRO';
+
+  @override
+  String get thisWeek => 'Ova sedmica';
+
+  @override
+  String get busiestDay => 'Najprometniji dan';
+
+  @override
+  String get timeRecorded => 'Snimljeno vrijeme';
+
+  @override
+  String get peopleYouTalkedToMost => 'Osobe s kojima ste najviše razgovarali';
+
+  @override
+  String recapPrevious(String value) {
+    return 'Prethodno: $value';
+  }
+
+  @override
+  String get noRecapForPeriod => 'U ovom periodu još ništa nije snimljeno';
 }

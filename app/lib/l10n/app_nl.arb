@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Aan: Omi · {address}",
     "chatAppsInsightsSubtitle": "Laat Omi je hier een samenvatting of inzicht sturen.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Wachten tot je in Telegram op Start tikt…"
+    "chatAppsTelegramWaiting": "Wachten tot je in Telegram op Start tikt…",
+    "thisWeek": "Deze week",
+    "busiestDay": "Drukste dag",
+    "timeRecorded": "Opgenomen tijd",
+    "peopleYouTalkedToMost": "Met wie je het meest sprak",
+    "recapPrevious": "Vorige: {value}",
+    "noRecapForPeriod": "Nog niets opgenomen in deze periode"
 }

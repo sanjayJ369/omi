@@ -11427,5 +11427,11 @@
     "chatAppsTextThisTo": "Не се отвори? Испратете го ова на {address}",
     "chatAppsLinkExpired": "Таа врска истече. Допрете Отвори Telegram за нова.",
     "chatAppsIMessageTo": "До: Omi · {address}",
-    "chatAppsOmiPro": "OMI PRO"
+    "chatAppsOmiPro": "OMI PRO",
+    "thisWeek": "Оваа недела",
+    "busiestDay": "Најзафатен ден",
+    "timeRecorded": "Снимено време",
+    "peopleYouTalkedToMost": "Луѓе со кои најмногу разговаравте",
+    "recapPrevious": "Претходно: {value}",
+    "noRecapForPeriod": "Сè уште ништо не е снимено во овој период"
 }

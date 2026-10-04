@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "收件人：Omi · {address}",
     "chatAppsInsightsSubtitle": "允许 Omi 在这里向你发送回顾或洞察。",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "正在等待你在 Telegram 中点按“开始”…"
+    "chatAppsTelegramWaiting": "正在等待你在 Telegram 中点按“开始”…",
+    "thisWeek": "本周",
+    "busiestDay": "最忙碌的一天",
+    "timeRecorded": "录制时长",
+    "peopleYouTalkedToMost": "与你交谈最多的人",
+    "recapPrevious": "上一期：{value}",
+    "noRecapForPeriod": "此期间还没有任何录音"
 }

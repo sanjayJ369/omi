@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Đến: Omi · {address}",
     "chatAppsInsightsSubtitle": "Cho phép Omi gửi bản tóm tắt hoặc thông tin chi tiết cho bạn tại đây.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Đang chờ bạn chạm vào Bắt đầu trong Telegram…"
+    "chatAppsTelegramWaiting": "Đang chờ bạn chạm vào Bắt đầu trong Telegram…",
+    "thisWeek": "Tuần này",
+    "busiestDay": "Ngày bận rộn nhất",
+    "timeRecorded": "Thời gian ghi âm",
+    "peopleYouTalkedToMost": "Những người bạn trò chuyện nhiều nhất",
+    "recapPrevious": "Trước đó: {value}",
+    "noRecapForPeriod": "Chưa có gì được ghi âm trong khoảng thời gian này"
 }

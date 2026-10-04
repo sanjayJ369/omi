@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Кому: Omi · {address}",
     "chatAppsInsightsSubtitle": "Дозвольте Omi надсилати вам тут підсумок або інсайт.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Чекаємо, поки ви натиснете «Почати» в Telegram…"
+    "chatAppsTelegramWaiting": "Чекаємо, поки ви натиснете «Почати» в Telegram…",
+    "thisWeek": "Цей тиждень",
+    "busiestDay": "Найнасиченіший день",
+    "timeRecorded": "Записаний час",
+    "peopleYouTalkedToMost": "З ким ви говорили найбільше",
+    "recapPrevious": "Раніше: {value}",
+    "noRecapForPeriod": "За цей період ще нічого не записано"
 }

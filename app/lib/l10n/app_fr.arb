@@ -4025,5 +4025,11 @@
     "chatAppsIMessageTo": "À : Omi · {address}",
     "chatAppsInsightsSubtitle": "Laissez Omi vous envoyer un récap ou une idée ici.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "En attente de votre appui sur Démarrer dans Telegram…"
+    "chatAppsTelegramWaiting": "En attente de votre appui sur Démarrer dans Telegram…",
+    "thisWeek": "Cette semaine",
+    "busiestDay": "Journée la plus chargée",
+    "timeRecorded": "Temps enregistré",
+    "peopleYouTalkedToMost": "Personnes avec qui vous avez le plus parlé",
+    "recapPrevious": "Précédent : {value}",
+    "noRecapForPeriod": "Rien n'a encore été enregistré sur cette période"
 }

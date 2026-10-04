@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Către: Omi · {address}",
     "chatAppsInsightsSubtitle": "Lasă-l pe Omi să-ți trimită aici un rezumat sau o perspectivă.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Așteptăm să atingi Start în Telegram…"
+    "chatAppsTelegramWaiting": "Așteptăm să atingi Start în Telegram…",
+    "thisWeek": "Săptămâna aceasta",
+    "busiestDay": "Cea mai aglomerată zi",
+    "timeRecorded": "Timp înregistrat",
+    "peopleYouTalkedToMost": "Persoanele cu care ai vorbit cel mai mult",
+    "recapPrevious": "Anterior: {value}",
+    "noRecapForPeriod": "Încă nu s-a înregistrat nimic în această perioadă"
 }

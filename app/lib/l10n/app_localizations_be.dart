@@ -13001,4 +13001,24 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get chatAppsOmiPro => 'OMI PRO';
+
+  @override
+  String get thisWeek => 'Гэты тыдзень';
+
+  @override
+  String get busiestDay => 'Самы насычаны дзень';
+
+  @override
+  String get timeRecorded => 'Запісаны час';
+
+  @override
+  String get peopleYouTalkedToMost => 'З кім вы размаўлялі найбольш';
+
+  @override
+  String recapPrevious(String value) {
+    return 'Папярэдні: $value';
+  }
+
+  @override
+  String get noRecapForPeriod => 'За гэты перыяд пакуль нічога не запісана';
 }

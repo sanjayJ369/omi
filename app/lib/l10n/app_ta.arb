@@ -11427,5 +11427,11 @@
     "chatAppsTextThisTo": "திறக்கவில்லையா? இதை {address} எண்ணுக்கு அனுப்புங்கள்",
     "chatAppsLinkExpired": "அந்த இணைப்பு காலாவதியாகிவிட்டது. புதியதைப் பெற Telegram-ஐத் திற என்பதைத் தட்டுங்கள்.",
     "chatAppsIMessageTo": "பெறுநர்: Omi · {address}",
-    "chatAppsOmiPro": "OMI PRO"
+    "chatAppsOmiPro": "OMI PRO",
+    "thisWeek": "இந்த வாரம்",
+    "busiestDay": "மிகவும் பரபரப்பான நாள்",
+    "timeRecorded": "பதிவு செய்த நேரம்",
+    "peopleYouTalkedToMost": "நீங்கள் அதிகம் பேசியவர்கள்",
+    "recapPrevious": "முந்தையது: {value}",
+    "noRecapForPeriod": "இந்தக் காலத்தில் இன்னும் எதுவும் பதிவு செய்யப்படவில்லை"
 }

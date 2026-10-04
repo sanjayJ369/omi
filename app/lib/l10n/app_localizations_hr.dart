@@ -13000,4 +13000,24 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get chatAppsOmiPro => 'OMI PRO';
+
+  @override
+  String get thisWeek => 'Ovaj tjedan';
+
+  @override
+  String get busiestDay => 'Najzauzetiji dan';
+
+  @override
+  String get timeRecorded => 'Snimljeno vrijeme';
+
+  @override
+  String get peopleYouTalkedToMost => 'Osobe s kojima ste najviše razgovarali';
+
+  @override
+  String recapPrevious(String value) {
+    return 'Prethodno: $value';
+  }
+
+  @override
+  String get noRecapForPeriod => 'U ovom razdoblju još ništa nije snimljeno';
 }

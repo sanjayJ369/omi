@@ -12960,4 +12960,24 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get chatAppsOmiPro => 'OMI PRO';
+
+  @override
+  String get thisWeek => 'See nädal';
+
+  @override
+  String get busiestDay => 'Kõige tihedam päev';
+
+  @override
+  String get timeRecorded => 'Salvestatud aeg';
+
+  @override
+  String get peopleYouTalkedToMost => 'Inimesed, kellega rääkisid kõige rohkem';
+
+  @override
+  String recapPrevious(String value) {
+    return 'Eelmine: $value';
+  }
+
+  @override
+  String get noRecapForPeriod => 'Selles perioodis pole veel midagi salvestatud';
 }

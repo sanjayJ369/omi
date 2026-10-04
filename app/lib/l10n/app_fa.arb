@@ -11427,5 +11427,11 @@
     "chatAppsTextThisTo": "باز نشد؟ این را به {address} پیامک کنید",
     "chatAppsLinkExpired": "آن پیوند منقضی شد. برای دریافت پیوند جدید روی باز کردن Telegram ضربه بزنید.",
     "chatAppsIMessageTo": "به: Omi · {address}",
-    "chatAppsOmiPro": "OMI PRO"
+    "chatAppsOmiPro": "OMI PRO",
+    "thisWeek": "این هفته",
+    "busiestDay": "پرمشغله‌ترین روز",
+    "timeRecorded": "زمان ضبط‌شده",
+    "peopleYouTalkedToMost": "کسانی که بیشتر با آن‌ها صحبت کردید",
+    "recapPrevious": "قبلی: {value}",
+    "noRecapForPeriod": "هنوز در این بازه چیزی ضبط نشده است"
 }

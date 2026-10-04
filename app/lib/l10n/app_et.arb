@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Kellele: Omi · {address}",
     "chatAppsInsightsSubtitle": "Luba Omil saata sulle siia kokkuvõte või ülevaade.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Ootan, et puudutaksid Telegramis nuppu Alusta…"
+    "chatAppsTelegramWaiting": "Ootan, et puudutaksid Telegramis nuppu Alusta…",
+    "thisWeek": "See nädal",
+    "busiestDay": "Kõige tihedam päev",
+    "timeRecorded": "Salvestatud aeg",
+    "peopleYouTalkedToMost": "Inimesed, kellega rääkisid kõige rohkem",
+    "recapPrevious": "Eelmine: {value}",
+    "noRecapForPeriod": "Selles perioodis pole veel midagi salvestatud"
 }

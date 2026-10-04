@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Kam: Omi · {address}",
     "chatAppsInsightsSubtitle": "Leiskite Omi čia atsiųsti apibendrinimą ar įžvalgą.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Laukiama, kol palieskosite Pradėti Telegram…"
+    "chatAppsTelegramWaiting": "Laukiama, kol palieskosite Pradėti Telegram…",
+    "thisWeek": "Ši savaitė",
+    "busiestDay": "Užimčiausia diena",
+    "timeRecorded": "Įrašytas laikas",
+    "peopleYouTalkedToMost": "Žmonės, su kuriais kalbėjote daugiausia",
+    "recapPrevious": "Ankstesnis: {value}",
+    "noRecapForPeriod": "Šiuo laikotarpiu dar nieko neįrašyta"
 }

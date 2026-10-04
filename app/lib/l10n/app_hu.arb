@@ -4086,5 +4086,11 @@
     "chatAppsIMessageTo": "Címzett: Omi · {address}",
     "chatAppsInsightsSubtitle": "Engedd, hogy Omi itt küldjön összefoglalót vagy meglátást.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Várakozás arra, hogy az Indításra koppints a Telegramban…"
+    "chatAppsTelegramWaiting": "Várakozás arra, hogy az Indításra koppints a Telegramban…",
+    "thisWeek": "Ez a hét",
+    "busiestDay": "Legforgalmasabb nap",
+    "timeRecorded": "Rögzített idő",
+    "peopleYouTalkedToMost": "Akikkel a legtöbbet beszéltél",
+    "recapPrevious": "Előző: {value}",
+    "noRecapForPeriod": "Ebben az időszakban még nincs felvétel"
 }

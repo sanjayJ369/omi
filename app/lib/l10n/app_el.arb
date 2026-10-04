@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "Προς: Omi · {address}",
     "chatAppsInsightsSubtitle": "Άσε το Omi να σου στέλνει εδώ μια σύνοψη ή μια πληροφορία.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Αναμονή να πατήσεις «Έναρξη» στο Telegram…"
+    "chatAppsTelegramWaiting": "Αναμονή να πατήσεις «Έναρξη» στο Telegram…",
+    "thisWeek": "Αυτή την εβδομάδα",
+    "busiestDay": "Η πιο πολυάσχολη μέρα",
+    "timeRecorded": "Χρόνος ηχογράφησης",
+    "peopleYouTalkedToMost": "Με ποιους μίλησες περισσότερο",
+    "recapPrevious": "Προηγούμενη: {value}",
+    "noRecapForPeriod": "Δεν έχει ηχογραφηθεί τίποτα σε αυτή την περίοδο ακόμα"
 }

@@ -11427,5 +11427,11 @@
     "chatAppsTextThisTo": "Hindi nagbukas? I-text ito sa {address}",
     "chatAppsLinkExpired": "Nag-expire na ang link na iyon. I-tap ang Buksan ang Telegram para sa bago.",
     "chatAppsIMessageTo": "Para kay: Omi · {address}",
-    "chatAppsOmiPro": "OMI PRO"
+    "chatAppsOmiPro": "OMI PRO",
+    "thisWeek": "Ngayong linggo",
+    "busiestDay": "Pinakaabalang araw",
+    "timeRecorded": "Oras na na-record",
+    "peopleYouTalkedToMost": "Mga taong pinakamadalas mong kausap",
+    "recapPrevious": "Nakaraan: {value}",
+    "noRecapForPeriod": "Wala pang na-record sa panahong ito"
 }

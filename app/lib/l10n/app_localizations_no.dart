@@ -12967,4 +12967,24 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get chatAppsOmiPro => 'OMI PRO';
+
+  @override
+  String get thisWeek => 'Denne uken';
+
+  @override
+  String get busiestDay => 'Travleste dag';
+
+  @override
+  String get timeRecorded => 'Tid tatt opp';
+
+  @override
+  String get peopleYouTalkedToMost => 'Dem du snakket mest med';
+
+  @override
+  String recapPrevious(String value) {
+    return 'Forrige: $value';
+  }
+
+  @override
+  String get noRecapForPeriod => 'Ingenting tatt opp i denne perioden ennå';
 }

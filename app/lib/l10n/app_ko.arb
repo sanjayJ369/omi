@@ -3990,5 +3990,11 @@
     "chatAppsIMessageTo": "받는 사람: Omi · {address}",
     "chatAppsInsightsSubtitle": "Omi가 요약이나 인사이트를 여기로 보내도록 허용하세요.",
     "chatAppsOmiPro": "OMI PRO",
-    "chatAppsTelegramWaiting": "Telegram에서 시작을 탭하기를 기다리는 중…"
+    "chatAppsTelegramWaiting": "Telegram에서 시작을 탭하기를 기다리는 중…",
+    "thisWeek": "이번 주",
+    "busiestDay": "가장 바빴던 날",
+    "timeRecorded": "녹음 시간",
+    "peopleYouTalkedToMost": "가장 많이 대화한 사람",
+    "recapPrevious": "이전: {value}",
+    "noRecapForPeriod": "이 기간에 아직 녹음된 내용이 없습니다"
 }

@@ -11427,5 +11427,11 @@
     "chatAppsTextThisTo": "ತೆರೆಯಲಿಲ್ಲವೇ? ಇದನ್ನು {address} ಗೆ ಕಳುಹಿಸಿ",
     "chatAppsLinkExpired": "ಆ ಲಿಂಕ್ ಅವಧಿ ಮುಗಿದಿದೆ. ಹೊಸದಕ್ಕಾಗಿ Telegram ತೆರೆಯಿರಿ ಟ್ಯಾಪ್ ಮಾಡಿ.",
     "chatAppsIMessageTo": "ಗೆ: Omi · {address}",
-    "chatAppsOmiPro": "OMI PRO"
+    "chatAppsOmiPro": "OMI PRO",
+    "thisWeek": "ಈ ವಾರ",
+    "busiestDay": "ಅತ್ಯಂತ ಬಿಡುವಿಲ್ಲದ ದಿನ",
+    "timeRecorded": "ದಾಖಲಾದ ಸಮಯ",
+    "peopleYouTalkedToMost": "ನೀವು ಹೆಚ್ಚು ಮಾತನಾಡಿದ ಜನರು",
+    "recapPrevious": "ಹಿಂದಿನದು: {value}",
+    "noRecapForPeriod": "ಈ ಅವಧಿಯಲ್ಲಿ ಇನ್ನೂ ಏನೂ ದಾಖಲಾಗಿಲ್ಲ"
 }
