@@ -12990,7 +12990,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get timeRecorded => 'Kaydedilen süre';
 
   @override
-  String get peopleYouTalkedToMost => 'En çok konuştuğun kişiler';
+  String get peopleYouTalkedToMost => 'En çok konuştuğunuz kişiler';
 
   @override
   String recapPrevious(String value) {
