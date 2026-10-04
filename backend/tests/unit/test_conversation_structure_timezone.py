@@ -192,6 +192,10 @@ _load_module_from_file(
     BACKEND_DIR / "utils" / "llm" / "meeting_notes_presentation.py",
 )
 _load_module_from_file(
+    "utils.llm.conversation_title_people",
+    BACKEND_DIR / "utils" / "llm" / "conversation_title_people.py",
+)
+_load_module_from_file(
     "utils.llm.action_item_normalization",
     BACKEND_DIR / "utils" / "llm" / "action_item_normalization.py",
 )
