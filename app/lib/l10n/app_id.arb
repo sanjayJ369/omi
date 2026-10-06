@@ -3868,7 +3868,12 @@
     "playbackAudioUnavailable": "Audio Tidak Tersedia",
     "playbackAudioLoadFailed": "Audio Tidak Dapat Dimuat",
     "playbackAudioNetworkFailed": "Periksa Koneksi",
+    "capturePendantDisconnectedShort": "Omi akan menyambung kembali sendiri",
     "forYou": "Untuk Anda",
     "stopThese": "Hentikan Ini",
-    "dismiss": "Tutup"
+    "dismiss": "Tutup",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Tampilkan di layar kunci",
+    "accountDeletionInProgressSignInAgain": "Akun ini sedang dihapus. Masuk dengan akun lain, atau tunggu beberapa menit lalu coba lagi."
 }

@@ -9258,6 +9258,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get syncCardDownloadingTitle => 'در حال دانلود از دستگاه شما';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current از $total';
   }
@@ -11240,6 +11250,9 @@ class AppLocalizationsFa extends AppLocalizations {
       'آویز شما اتصالش را با این تلفن از دست داد. وقتی آویز روشن و نزدیک باشد، Omi خودش دوباره وصل می‌شود. هر آنچه پیش از این ضبط شده محفوظ است.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi خودش دوباره وصل می‌شود';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name و دیگران';
   }
@@ -12397,4 +12410,11 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get dismiss => 'رد کردن';
+
+  @override
+  String get showOnLockScreen => 'نمایش در صفحهٔ قفل';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'این حساب در حال حذف است. با حساب دیگری وارد شوید یا چند دقیقه صبر کنید و دوباره امتحان کنید.';
 }

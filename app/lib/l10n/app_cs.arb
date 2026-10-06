@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "Zvuk není k dispozici",
     "playbackAudioLoadFailed": "Zvuk se nepodařilo načíst",
     "playbackAudioNetworkFailed": "Zkontrolujte připojení",
+    "capturePendantDisconnectedShort": "Omi se znovu připojí sám",
     "forYou": "Pro vás",
     "stopThese": "Zastavit tyto",
-    "dismiss": "Skrýt"
+    "dismiss": "Skrýt",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Zobrazit na zamčené obrazovce",
+    "accountDeletionInProgressSignInAgain": "Tento účet se maže. Přihlaste se jiným účtem, nebo počkejte několik minut a zkuste to znovu."
 }

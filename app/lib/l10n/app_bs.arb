@@ -11390,7 +11390,12 @@
     "playbackAudioUnavailable": "Zvuk nije dostupan",
     "playbackAudioLoadFailed": "Zvuk nije moguće učitati",
     "playbackAudioNetworkFailed": "Provjerite vezu",
+    "capturePendantDisconnectedShort": "Omi će se sam ponovo povezati",
     "forYou": "Za vas",
     "stopThese": "Zaustavi ovo",
-    "dismiss": "Sakrij"
+    "dismiss": "Sakrij",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Prikaži na zaključanom ekranu",
+    "accountDeletionInProgressSignInAgain": "Ovaj račun se briše. Prijavite se drugim računom ili sačekajte nekoliko minuta i pokušajte ponovo."
 }

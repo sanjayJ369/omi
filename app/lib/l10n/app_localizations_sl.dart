@@ -9284,6 +9284,16 @@ class AppLocalizationsSl extends AppLocalizations {
   String get syncCardDownloadingTitle => 'Prenašanje iz vaše naprave';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current od $total';
   }
@@ -11275,6 +11285,9 @@ class AppLocalizationsSl extends AppLocalizations {
       'Obesek je izgubil povezavo s tem telefonom. Omi se bo sam znova povezal, ko bo obesek vklopljen in v bližini. Vse, kar je bilo posneto prej, je varno.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi se bo sam znova povezal';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name in drugi';
   }
@@ -12429,4 +12442,11 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get dismiss => 'Skrij';
+
+  @override
+  String get showOnLockScreen => 'Prikaži na zaklenjenem zaslonu';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'Ta račun se briše. Prijavite se z drugim računom ali počakajte nekaj minut in poskusite znova.';
 }

@@ -9313,6 +9313,16 @@ class AppLocalizationsIt extends AppLocalizations {
   String get syncCardDownloadingTitle => 'Download dal tuo dispositivo';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current di $total';
   }
@@ -11309,6 +11319,9 @@ class AppLocalizationsIt extends AppLocalizations {
       'Il ciondolo ha perso la connessione con questo telefono. Omi si riconnetterà da solo quando il ciondolo sarà acceso e vicino. Tutto ciò che è stato registrato prima è al sicuro.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi si riconnetterà da solo';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name e altri';
   }
@@ -12468,4 +12481,11 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get dismiss => 'Ignora';
+
+  @override
+  String get showOnLockScreen => 'Mostra sulla schermata di blocco';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'Questo account è in fase di eliminazione. Accedi con un altro account oppure attendi qualche minuto e riprova.';
 }

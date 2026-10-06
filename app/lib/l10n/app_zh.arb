@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "音频不可用",
     "playbackAudioLoadFailed": "无法加载音频",
     "playbackAudioNetworkFailed": "请检查网络连接",
+    "capturePendantDisconnectedShort": "Omi 会自动重新连接",
     "forYou": "为你推荐",
     "stopThese": "停止此类推荐",
-    "dismiss": "忽略"
+    "dismiss": "忽略",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "在锁定屏幕上显示",
+    "accountDeletionInProgressSignInAgain": "此账号正在删除中。请使用其他账号登录，或等待几分钟后重试。"
 }

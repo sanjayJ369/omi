@@ -3875,7 +3875,12 @@
     "playbackAudioUnavailable": "Lyd ikke tilgængelig",
     "playbackAudioLoadFailed": "Lyden kunne ikke indlæses",
     "playbackAudioNetworkFailed": "Tjek forbindelsen",
+    "capturePendantDisconnectedShort": "Omi genopretter forbindelsen af sig selv",
     "forYou": "Til dig",
     "stopThese": "Stop disse",
-    "dismiss": "Afvis"
+    "dismiss": "Afvis",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Vis på låseskærmen",
+    "accountDeletionInProgressSignInAgain": "Denne konto er ved at blive slettet. Log ind med en anden konto, eller vent et par minutter og prøv igen."
 }

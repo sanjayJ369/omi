@@ -507,6 +507,16 @@ or enablement require explicit coordinator action with new version/evidence.
 | User producer preference | Explicit false wins every admission/publication/push check. |
 | `LLM_GATEWAY_ACCOUNTING_ENABLED` | Must be true for v2; existing sink semantics unchanged for other traffic. |
 
+Server flag resolution caches both true and false per UID for **300 seconds**
+per process, with a **60-second** failure cache and a 4,096-entry LRU bound.
+Concurrent same-user misses share one lookup. Errors still select legacy for
+cohort mentor and deny v2 admission; a content-free warning records exception
+type and HTTP status at most once per minute per process. Realtime mentor
+validates the env value first, then runs its existing shared paid/opt-in,
+buffering and debounce admission. Only admitted messages resolve a cohort flag;
+`legacy`/`v2` env selection makes no flag lookup on this dispatch path (v2's
+separate generation/publication/push admission still requires the flag).
+
 Structured events: `proactivity_v2_admission`, `proactivity_v2_budget_reserved`,
 `proactivity_v2_budget_settled`, `proactivity_v2_item_terminal`,
 `proactivity_v2_feed_exposed`, `proactivity_v2_push_terminal`,
@@ -568,18 +578,43 @@ revisions cannot publish a follow-up. Missing queue bindings keep scheduling off
 
 | Host / role | Required bindings before cohort enablement |
 | --- | --- |
-| Backend API (including desktop-backend wherever feed/outcome routes are served) | Customer-data Firestore identity; shared Redis `REDIS_DB_HOST` / `REDIS_DB_PORT` / credentials; `POSTHOG_PROJECT_API_KEY` (or `POSTHOG_API_KEY`) and matching `POSTHOG_HOST`; integrated routes and registry. |
+| Backend API (including desktop-backend wherever feed/outcome routes are served) | Customer-data Firestore identity; shared Redis `REDIS_DB_HOST` / `REDIS_DB_PORT` / credentials; plain `PROACTIVITY_V2_POSTHOG_TOKEN` and matching `PROACTIVITY_V2_POSTHOG_HOST`; integrated routes and registry. |
 | Mentor production on listen/backend and pusher | Same customer-data/Redis/PostHog bindings; `MENTOR_PIPELINE=cohort` for a per-user rollout (true `proactivity_v2` selects v2; false/unknown/error retains legacy), or `v2` only for a host whose mentor users are all enabled; working authenticated `OMI_LLM_GATEWAY_URL`/gateway service bindings. Pusher is a separate image/release: enabling only backend does not switch it. |
 | Task create/update/reminder hosts and commitment callback worker | All five queue/project/location bindings above, plus the same PostHog, customer-data and gateway bindings on the worker. Propagate enqueue bindings to every host that invokes reminder scheduling, not just the callback host. |
 | LLM gateway | `LLM_GATEWAY_ACCOUNTING_ENABLED=true`; customer-data Firestore, shared Redis and PostHog bindings; **the same `MENTOR_PIPELINE=cohort` (or host-wide `v2`) selection as mentor hosts for admission here too**; existing Luna and System One/Jev provider credentials and the committed routes/rate cards. No direct-provider fallback. |
 | Mobile, macOS, Windows | Updated generated clients and consumers, ordinary authenticated backend routing, existing notification preferences/permissions. No local flag or UID bypass grants server admission. Live listen sockets carry identity-only v2 wakeups; all desktop content is fetched through the feed. Offline sockets catch up through foreground/active polling. |
 
+V2 flag lookup uses **only** `PROACTIVITY_V2_POSTHOG_TOKEN`, stripped and
+required to start with `phc_`. This is the Omi project's public client token
+(project **302298**, already committed in
+`desktop/macos/Desktop/Sources/PostHogManager.swift`), bound as a plain value,
+with zero new Secret Manager references. `PROACTIVITY_V2_POSTHOG_HOST` defaults
+to `https://us.posthog.com`, including when unset or whitespace-only.
+The shared `POSTHOG_PROJECT_API_KEY` is intentionally `disabled`: **do not
+repoint it**, `POSTHOG_API_KEY`, or generic `POSTHOG_HOST` to enable v2. JIT
+rollout flags and backend capture telemetry keep their existing configuration.
+Missing, blank, `disabled`, or non-`phc_` dedicated tokens fail closed with
+`flag_unavailable`; diagnostics contain no token and are rate-limited to once
+per 60 seconds per process. There is no shared-key fallback in dev, local,
+test, or production.
+
+Bind the dedicated public token on **pusher, backend-listen, llm-gateway,
+backend, backend-sync, backend-sync-backfill, backend-integration, and
+desktop-backend** in both serving environments. The gateway budget executor
+calls `utils.proactivity.ensure_admitted`, so it needs its own binding even
+when the producer already resolved the flag. Desktop-backend serves the
+feed/outcome routes and deploys through separate workflows. Local `.env`
+users must set the dedicated variable to opt in; offline/emulator setups
+leave it unset and fail closed without contacting PostHog.
+
 Create the PostHog **`proactivity_v2`** boolean flag in the same project used by
 these server/gateway clients, initially **disabled / zero-percent**. Its registry
 entry is a declaration, not creation or enablement. Absent, unknown or failed flag
 resolution denies v2 generation and push; do not use a user-ID bypass. Verify all
-hosts resolve the same bounded cohort before increasing exposure. No creation or
-flag update is performed by this PR.
+hosts resolve the same bounded cohort before increasing exposure. Allow up to
+300 seconds for cached flag results to reflect an enablement or rollback change,
+and 60 seconds before retrying a failed lookup (see rollback notes below).
+No creation or flag update is performed by this PR.
 
 The rollout defaults remain off: `proactivity_v2` absent/false,
 `MENTOR_PIPELINE=legacy`, and empty commitment queue bindings. Producer registry
@@ -607,10 +642,22 @@ released clients while v2 feed cards target the source conversation.
 5. Flag off initially. Enable bounded cohort only with provisional or measured producer rows,
    readiness checks and actual mobile/macOS feed-to-object/action verification.
 
-Rollback: set `proactivity_v2=false`; all new v2 generation/push stops, in-flight
-calls retain reservations and settle, publication rechecks flag and suppresses.
+Rollback: disable the PostHog `proactivity_v2` flag. Unsetting
+`PROACTIVITY_V2_POSTHOG_TOKEN` also fails closed once the new environment reaches
+fresh processes; the SDK client and flag results are process-cached, so changing
+a file or a live process environment alone is not an immediate kill switch.
+Never change the shared PostHog secret as part of rollback. Cached enabled results expire within
+**300 seconds per process** before new v2 generation/push stops and feed reads
+return disabled. Enablement/ramp changes have the same maximum cache latency;
+flag failures deny immediately on the next uncached check and retry after
+**60 seconds**. Allow this rollback window when checking all serving hosts;
+for an urgent mentor-only rollback, explicitly set `MENTOR_PIPELINE=legacy`
+on every mentor host (effective once that env change reaches the process).
+In-flight calls retain reservations and settle; publication rechecks the cached
+flag and suppresses after disable becomes visible.
 Feed returns disabled, outcomes for existing items still work. Coordinator may
-explicitly flip mentor to legacy; never an automatic failure fallback. Preserve
+explicitly flip mentor to legacy. A failed cohort flag lookup selects legacy
+before invoking v2; once v2 is invoked, failures never retry through legacy. Preserve
 ledger/budgets/attempt IDs until TTL; no historical rewrite or refund-on-rollback.
 No old ledger backfill. Released clients continue existing routes while the
 integration owner handles retirement using `contracts/client-compat/` policy.

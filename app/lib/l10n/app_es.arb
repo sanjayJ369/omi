@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "Audio no disponible",
     "playbackAudioLoadFailed": "No se pudo cargar el audio",
     "playbackAudioNetworkFailed": "Comprueba la conexión",
+    "capturePendantDisconnectedShort": "Omi se volverá a conectar solo",
     "forYou": "Para ti",
     "stopThese": "Dejar de recibir esto",
-    "dismiss": "Descartar"
+    "dismiss": "Descartar",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Mostrar en la pantalla de bloqueo",
+    "accountDeletionInProgressSignInAgain": "Esta cuenta se está eliminando. Inicia sesión con otra cuenta o espera unos minutos e inténtalo de nuevo."
 }

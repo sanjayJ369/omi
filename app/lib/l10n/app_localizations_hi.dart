@@ -9240,6 +9240,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get syncCardDownloadingTitle => 'आपके डिवाइस से डाउनलोड हो रहा है';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$total में से $current';
   }
@@ -11226,6 +11236,9 @@ class AppLocalizationsHi extends AppLocalizations {
       'आपके पेंडेंट का इस फ़ोन से कनेक्शन टूट गया। पेंडेंट चालू और पास होने पर Omi अपने आप फिर से कनेक्ट हो जाएगा। इससे पहले रिकॉर्ड की गई हर चीज़ सुरक्षित है।';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi अपने आप फिर से कनेक्ट हो जाएगा';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name और अन्य';
   }
@@ -12382,4 +12395,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get dismiss => 'हटाएँ';
+
+  @override
+  String get showOnLockScreen => 'लॉक स्क्रीन पर दिखाएँ';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'यह खाता हटाया जा रहा है। किसी दूसरे खाते से साइन इन करें, या कुछ मिनट रुककर फिर से कोशिश करें।';
 }

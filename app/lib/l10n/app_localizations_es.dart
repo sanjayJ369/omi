@@ -9283,6 +9283,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get syncCardDownloadingTitle => 'Descargando desde tu dispositivo';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current de $total';
   }
@@ -11276,6 +11286,9 @@ class AppLocalizationsEs extends AppLocalizations {
       'Tu colgante perdió la conexión con este teléfono. Omi se volverá a conectar solo cuando el colgante esté encendido y cerca. Todo lo grabado antes está a salvo.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi se volverá a conectar solo';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name y otros';
   }
@@ -12435,4 +12448,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get dismiss => 'Descartar';
+
+  @override
+  String get showOnLockScreen => 'Mostrar en la pantalla de bloqueo';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'Esta cuenta se está eliminando. Inicia sesión con otra cuenta o espera unos minutos e inténtalo de nuevo.';
 }

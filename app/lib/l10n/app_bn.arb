@@ -11390,7 +11390,12 @@
     "playbackAudioUnavailable": "অডিও উপলব্ধ নয়",
     "playbackAudioLoadFailed": "অডিও লোড করা যায়নি",
     "playbackAudioNetworkFailed": "সংযোগ পরীক্ষা করুন",
+    "capturePendantDisconnectedShort": "Omi নিজে থেকেই আবার সংযোগ করবে",
     "forYou": "আপনার জন্য",
     "stopThese": "এগুলো বন্ধ করুন",
-    "dismiss": "সরিয়ে দিন"
+    "dismiss": "সরিয়ে দিন",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "লক স্ক্রিনে দেখান",
+    "accountDeletionInProgressSignInAgain": "এই অ্যাকাউন্টটি মুছে ফেলা হচ্ছে। অন্য অ্যাকাউন্ট দিয়ে সাইন ইন করুন, অথবা কয়েক মিনিট অপেক্ষা করে আবার চেষ্টা করুন।"
 }

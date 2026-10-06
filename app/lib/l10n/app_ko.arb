@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "오디오를 사용할 수 없음",
     "playbackAudioLoadFailed": "오디오를 불러올 수 없음",
     "playbackAudioNetworkFailed": "연결 확인",
+    "capturePendantDisconnectedShort": "Omi가 자동으로 다시 연결해요",
     "forYou": "나를 위한 추천",
     "stopThese": "이 유형 중지",
-    "dismiss": "닫기"
+    "dismiss": "닫기",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "잠금 화면에 표시",
+    "accountDeletionInProgressSignInAgain": "이 계정은 삭제 중입니다. 다른 계정으로 로그인하거나 몇 분 후 다시 시도해 주세요."
 }

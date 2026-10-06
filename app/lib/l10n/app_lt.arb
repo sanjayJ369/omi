@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "Garsas nepasiekiamas",
     "playbackAudioLoadFailed": "Nepavyko įkelti garso",
     "playbackAudioNetworkFailed": "Patikrinkite ryšį",
+    "capturePendantDisconnectedShort": "Omi pats vėl prisijungs",
     "forYou": "Jums",
     "stopThese": "Sustabdyti šiuos",
-    "dismiss": "Slėpti"
+    "dismiss": "Slėpti",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Rodyti užrakinimo ekrane",
+    "accountDeletionInProgressSignInAgain": "Ši paskyra šalinama. Prisijunkite kita paskyra arba palaukite kelias minutes ir bandykite dar kartą."
 }

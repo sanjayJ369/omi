@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "Ο ήχος δεν είναι διαθέσιμος",
     "playbackAudioLoadFailed": "Δεν ήταν δυνατή η φόρτωση του ήχου",
     "playbackAudioNetworkFailed": "Ελέγξτε τη σύνδεση",
+    "capturePendantDisconnectedShort": "Το Omi θα επανασυνδεθεί μόνο του",
     "forYou": "Για εσάς",
     "stopThese": "Διακοπή αυτών",
-    "dismiss": "Απόρριψη"
+    "dismiss": "Απόρριψη",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Εμφάνιση στην οθόνη κλειδώματος",
+    "accountDeletionInProgressSignInAgain": "Αυτός ο λογαριασμός διαγράφεται. Συνδεθείτε με άλλον λογαριασμό ή περιμένετε λίγα λεπτά και δοκιμάστε ξανά."
 }

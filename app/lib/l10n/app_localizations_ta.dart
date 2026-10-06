@@ -9327,6 +9327,16 @@ class AppLocalizationsTa extends AppLocalizations {
   String get syncCardDownloadingTitle => 'உங்கள் சாதனத்திலிருந்து பதிவிறக்கப்படுகிறது';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$total-இல் $current';
   }
@@ -11325,6 +11335,9 @@ class AppLocalizationsTa extends AppLocalizations {
       'உங்கள் பதக்கம் இந்த ஃபோனுடனான இணைப்பை இழந்தது. பதக்கம் இயக்கத்தில் இருந்து அருகில் இருக்கும்போது Omi தானாகவே மீண்டும் இணையும். இதற்கு முன் பதிவானவை அனைத்தும் பாதுகாப்பாக உள்ளன.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi தானாகவே மீண்டும் இணையும்';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name மற்றும் மற்றவர்கள்';
   }
@@ -12483,4 +12496,11 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get dismiss => 'மறை';
+
+  @override
+  String get showOnLockScreen => 'பூட்டுத் திரையில் காட்டு';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'இந்தக் கணக்கு நீக்கப்பட்டு வருகிறது. வேறு கணக்கில் உள்நுழையவும், அல்லது சில நிமிடங்கள் காத்திருந்து மீண்டும் முயற்சிக்கவும்.';
 }

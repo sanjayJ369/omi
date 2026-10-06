@@ -9278,6 +9278,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get syncCardDownloadingTitle => 'Завантаження з вашого пристрою';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current з $total';
   }
@@ -11269,6 +11279,9 @@ class AppLocalizationsUk extends AppLocalizations {
       'Кулон втратив зв’язок із цим телефоном. Omi перепідключиться сам, коли кулон буде ввімкнений і поруч. Усе, що записано до цього, збережено.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi перепідключиться сам';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name та інші';
   }
@@ -12427,4 +12440,11 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get dismiss => 'Приховати';
+
+  @override
+  String get showOnLockScreen => 'Показувати на екрані блокування';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'Цей обліковий запис видаляється. Увійдіть з іншим обліковим записом або зачекайте кілька хвилин і спробуйте знову.';
 }

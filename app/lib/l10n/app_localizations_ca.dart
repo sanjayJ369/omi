@@ -9313,6 +9313,16 @@ class AppLocalizationsCa extends AppLocalizations {
   String get syncCardDownloadingTitle => 'S\'està baixant del teu dispositiu';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current de $total';
   }
@@ -11310,6 +11320,9 @@ class AppLocalizationsCa extends AppLocalizations {
       'El penjoll ha perdut la connexió amb aquest telèfon. Omi es tornarà a connectar sol quan el penjoll estigui encès i a prop. Tot el que s\'ha gravat abans és segur.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi es tornarà a connectar sol';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name i altres';
   }
@@ -12469,4 +12482,11 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get dismiss => 'Descarta';
+
+  @override
+  String get showOnLockScreen => 'Mostra a la pantalla de bloqueig';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'Aquest compte s\'està suprimint. Inicia la sessió amb un altre compte o espera uns minuts i torna-ho a provar.';
 }

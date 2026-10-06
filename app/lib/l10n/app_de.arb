@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "Audio nicht verfügbar",
     "playbackAudioLoadFailed": "Audio konnte nicht geladen werden",
     "playbackAudioNetworkFailed": "Verbindung prüfen",
+    "capturePendantDisconnectedShort": "Omi verbindet sich von selbst neu",
     "forYou": "Für dich",
     "stopThese": "Diese stoppen",
-    "dismiss": "Ausblenden"
+    "dismiss": "Ausblenden",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Auf dem Sperrbildschirm anzeigen",
+    "accountDeletionInProgressSignInAgain": "Dieses Konto wird gerade gelöscht. Melde dich mit einem anderen Konto an oder warte ein paar Minuten und versuche es erneut."
 }

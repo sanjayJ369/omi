@@ -9285,6 +9285,16 @@ class AppLocalizationsPl extends AppLocalizations {
   String get syncCardDownloadingTitle => 'Pobieranie z Twojego urządzenia';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current z $total';
   }
@@ -11283,6 +11293,9 @@ class AppLocalizationsPl extends AppLocalizations {
       'Wisiorek utracił połączenie z tym telefonem. Omi połączy się ponownie samo, gdy wisiorek będzie włączony i w pobliżu. Wszystko nagrane wcześniej jest bezpieczne.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi połączy się ponownie samo';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name i inni';
   }
@@ -12438,4 +12451,11 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get dismiss => 'Ukryj';
+
+  @override
+  String get showOnLockScreen => 'Pokaż na ekranie blokady';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'To konto jest usuwane. Zaloguj się na inne konto albo poczekaj kilka minut i spróbuj ponownie.';
 }

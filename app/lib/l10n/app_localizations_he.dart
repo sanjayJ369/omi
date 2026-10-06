@@ -9191,6 +9191,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get syncCardDownloadingTitle => 'מוריד מהמכשיר שלך';
 
   @override
+  String syncCardDownloadPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String syncCardDownloadPercentSpeed(int percent, String speed) {
+    return '$percent% · $speed KB/s';
+  }
+
+  @override
   String syncCardProgressOf(int current, int total) {
     return '$current מתוך $total';
   }
@@ -11160,6 +11170,9 @@ class AppLocalizationsHe extends AppLocalizations {
       'התליון איבד את החיבור לטלפון הזה. Omi יתחבר מחדש מעצמו כשהתליון דלוק וקרוב. כל מה שהוקלט עד עכשיו שמור.';
 
   @override
+  String get capturePendantDisconnectedShort => 'Omi יתחבר מחדש מעצמו';
+
+  @override
   String participantsSummaryUncounted(String name) {
     return '$name ואחרים';
   }
@@ -12308,4 +12321,11 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get dismiss => 'סגירה';
+
+  @override
+  String get showOnLockScreen => 'הצגה במסך הנעילה';
+
+  @override
+  String get accountDeletionInProgressSignInAgain =>
+      'החשבון הזה נמחק כעת. היכנסו עם חשבון אחר, או המתינו כמה דקות ונסו שוב.';
 }

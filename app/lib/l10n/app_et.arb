@@ -3833,7 +3833,12 @@
     "playbackAudioUnavailable": "Heli pole saadaval",
     "playbackAudioLoadFailed": "Heli ei õnnestunud laadida",
     "playbackAudioNetworkFailed": "Kontrollige ühendust",
+    "capturePendantDisconnectedShort": "Omi loob ühenduse ise uuesti",
     "forYou": "Sulle",
     "stopThese": "Peata need",
-    "dismiss": "Peida"
+    "dismiss": "Peida",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "Kuva lukustuskuval",
+    "accountDeletionInProgressSignInAgain": "Seda kontot kustutatakse. Logi sisse teise kontoga või oota paar minutit ja proovi uuesti."
 }

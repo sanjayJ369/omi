@@ -11390,7 +11390,12 @@
     "playbackAudioUnavailable": "האודיו לא זמין",
     "playbackAudioLoadFailed": "לא ניתן לטעון את האודיו",
     "playbackAudioNetworkFailed": "בדקו את החיבור",
+    "capturePendantDisconnectedShort": "Omi יתחבר מחדש מעצמו",
     "forYou": "בשבילך",
     "stopThese": "הפסקת אלה",
-    "dismiss": "סגירה"
+    "dismiss": "סגירה",
+    "syncCardDownloadPercent": "{percent}%",
+    "syncCardDownloadPercentSpeed": "{percent}% · {speed} KB/s",
+    "showOnLockScreen": "הצגה במסך הנעילה",
+    "accountDeletionInProgressSignInAgain": "החשבון הזה נמחק כעת. היכנסו עם חשבון אחר, או המתינו כמה דקות ונסו שוב."
 }
