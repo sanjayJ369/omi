@@ -8,7 +8,7 @@ non-owner people and the account owner from ``ConversationPromptPrefix``.
 
 from typing import Callable
 
-from utils.llm.conversation_prompt_prefix import ConversationPromptPrefix
+from utils.llm.conversation_prompt_context import ConversationPromptPrefix
 
 GENERAL_TITLE_RULES = '''TITLE
 - Write a specific headline of at most 10 words about the central topic or outcome.

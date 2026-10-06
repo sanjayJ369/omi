@@ -36,7 +36,7 @@ def isolated_imports():
     with stub_modules({}):
         import utils.conversations.transcript_for_llm  # noqa: F401
         import utils.llm.conversation_processing  # noqa: F401
-        import utils.llm.conversation_prompt_prefix  # noqa: F401
+        import utils.llm.conversation_prompt_context  # noqa: F401
         import utils.llm.meeting_notes_validation  # noqa: F401
 
         yield
@@ -101,7 +101,7 @@ def _people():
 
 def _prefix_for(conversation, monkeypatch, *, owner_name='David', people=None, calendar_context=None):
     from utils.conversations import transcript_for_llm
-    from utils.llm.conversation_prompt_prefix import build_conversation_prompt_prefix
+    from utils.llm.conversation_prompt_context import build_conversation_prompt_prefix
 
     monkeypatch.setattr(transcript_for_llm, 'get_user_name', lambda *_a, **_k: owner_name)
     transcript, speaker_map = transcript_for_llm.conversation_transcript_and_speaker_map(
@@ -206,7 +206,7 @@ def test_prefix_title_people_exclude_owner_and_minor_speakers(monkeypatch):
 
 def test_title_people_do_not_change_shared_prefix_bytes(monkeypatch):
     from utils.conversations import transcript_for_llm
-    from utils.llm.conversation_prompt_prefix import build_conversation_prompt_prefix
+    from utils.llm.conversation_prompt_context import build_conversation_prompt_prefix
 
     conversation = _three_party_conversation()
     prefix = _prefix_for(conversation, monkeypatch)
@@ -598,7 +598,7 @@ def test_title_that_already_names_the_person_is_kept(monkeypatch, title):
 )
 def test_the_model_title_is_kept_whenever_it_names_a_listed_person(monkeypatch, title, expected):
     """How many people a title names is the prompt's job; the repair only leads a title naming nobody."""
-    from utils.llm.conversation_prompt_prefix import ConversationPromptPrefix
+    from utils.llm.conversation_prompt_context import ConversationPromptPrefix
 
     prefix = ConversationPromptPrefix(
         conversation_id='conv-three',
@@ -881,7 +881,7 @@ def test_title_lead_repair_is_counted_under_the_title_contract_version(monkeypat
 )
 def test_the_title_lead_never_brings_back_what_presentation_removed(monkeypatch, title_people, expected):
     """The lead runs after placeholder and transcript-ID sanitization, so it must not add either."""
-    from utils.llm.conversation_prompt_prefix import ConversationPromptPrefix
+    from utils.llm.conversation_prompt_context import ConversationPromptPrefix
 
     prefix = ConversationPromptPrefix(
         conversation_id='conv-ids',
@@ -898,7 +898,7 @@ def test_the_title_lead_never_brings_back_what_presentation_removed(monkeypatch,
 
 def test_rich_meeting_notes_titles_are_left_to_the_roster_rules(monkeypatch):
     from utils.conversations.meeting_participants import MeetingRoster, RosterEntry
-    from utils.llm.conversation_prompt_prefix import ConversationPromptPrefix
+    from utils.llm.conversation_prompt_context import ConversationPromptPrefix
 
     roster = MeetingRoster(
         entries=(
