@@ -88,6 +88,7 @@ def test_flag_defaults_off_and_reads_env_at_call_boundary(monkeypatch):
 
 
 def test_flag_off_prompt_bytes_pinned_to_base(processing):
+    from utils.llm.conversation_title_people import general_title_static_instructions
     from utils.llm.meeting_notes_rich_prompts import rich_volatile_instructions
 
     fixture = json.loads((Path(__file__).parent / 'fixtures/episode_notes/flag_off_prompts.json').read_text())
@@ -96,6 +97,12 @@ def test_flag_off_prompt_bytes_pinned_to_base(processing):
         processing._conversation_notes_volatile_instructions,
     )
     assert static('FORMAT') == fixture['legacy_static']
+    # The general path inserts one TITLE block before the schema; everything else stays the base bytes.
+    head, title_block = fixture['general_static'].removesuffix('\n\nFORMAT').rsplit('\n\n', 1)
+    assert title_block.startswith('TITLE\n')
+    assert f'{head}\n\n{title_block}\n\nFORMAT' == fixture['general_static']
+    assert f'{head}\n\nFORMAT' == fixture['legacy_static']
+    assert general_title_static_instructions('FORMAT', static) == fixture['general_static']
     assert volatile(**fixture['kwargs']) == fixture['legacy_volatile']
     assert rich_static_instructions('FORMAT', static) == fixture['rich_static']
     assert (
@@ -365,7 +372,6 @@ def test_actual_flag_off_request_uses_pinned_prompts(processing, monkeypatch):
     monkeypatch.setattr(processing, 'import_module', lambda name: pytest.fail('flag-off loaded episode runtime'))
     from langchain_core.output_parsers import PydanticOutputParser
     from utils.llm.conversation_prompt_context import ConversationPromptPrefix
-    from utils.llm.conversation_title_people import general_title_static_instructions
     from utils.llm.meeting_notes_rich_prompts import rich_volatile_instructions
 
     calls = []
@@ -402,12 +408,7 @@ def test_actual_flag_off_request_uses_pinned_prompts(processing, monkeypatch):
         schema = PydanticOutputParser(
             pydantic_object=RichStructuredExtraction if rich else StructuredExtraction
         ).get_format_instructions()
-        pinned_static = fixture['rich_static' if rich else 'legacy_static'].replace('FORMAT', schema)
-        if not rich:
-            # The general path adds its TITLE rules before the schema; the pinned base bytes stay as they were.
-            pinned_static = general_title_static_instructions(
-                schema, lambda fmt: fixture['legacy_static'].replace('FORMAT', fmt)
-            )
+        pinned_static = fixture['rich_static' if rich else 'general_static'].replace('FORMAT', schema)
         assert calls[-1][0].content == [{'type': 'text', 'text': pinned_static}]
         kwargs = {
             **fixture['kwargs'],
