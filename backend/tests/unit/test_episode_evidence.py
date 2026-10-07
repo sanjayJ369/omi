@@ -365,6 +365,7 @@ def test_actual_flag_off_request_uses_pinned_prompts(processing, monkeypatch):
     monkeypatch.setattr(processing, 'import_module', lambda name: pytest.fail('flag-off loaded episode runtime'))
     from langchain_core.output_parsers import PydanticOutputParser
     from utils.llm.conversation_prompt_context import ConversationPromptPrefix
+    from utils.llm.conversation_title_people import general_title_static_instructions
     from utils.llm.meeting_notes_rich_prompts import rich_volatile_instructions
 
     calls = []
@@ -401,9 +402,13 @@ def test_actual_flag_off_request_uses_pinned_prompts(processing, monkeypatch):
         schema = PydanticOutputParser(
             pydantic_object=RichStructuredExtraction if rich else StructuredExtraction
         ).get_format_instructions()
-        assert calls[-1][0].content == [
-            {'type': 'text', 'text': fixture['rich_static' if rich else 'legacy_static'].replace('FORMAT', schema)}
-        ]
+        pinned_static = fixture['rich_static' if rich else 'legacy_static'].replace('FORMAT', schema)
+        if not rich:
+            # The general path adds its TITLE rules before the schema; the pinned base bytes stay as they were.
+            pinned_static = general_title_static_instructions(
+                schema, lambda fmt: fixture['legacy_static'].replace('FORMAT', fmt)
+            )
+        assert calls[-1][0].content == [{'type': 'text', 'text': pinned_static}]
         kwargs = {
             **fixture['kwargs'],
             'density': f'Use 1-2 sections; target ~{95 if rich else 80} words across the entire note.',
