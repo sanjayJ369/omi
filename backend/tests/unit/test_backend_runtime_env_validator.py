@@ -267,7 +267,8 @@ def with_audio_timeline_span_env(payload: str) -> str:
         '        {"name": "LIVE_CAPTURE_WINDOW_MERGE_UNION", "value": "false"},\n'
         '        {"name": "LIVE_CAPTURE_WINDOW_TRANSLATOR_SENDS", "value": "false"},\n'
         '        {"name": "SONIOX_CAPTURE_AXIS_DIAGNOSTICS", "value": "false"},\n'
-        '        {"name": "SONIOX_WIRE_LEDGER", "value": "false"},',
+        '        {"name": "SONIOX_WIRE_LEDGER", "value": "false"},\n'
+        '        {"name": "SONIOX_ORDERED_FINALIZE", "value": "false"},',
     )
 
 
@@ -3401,7 +3402,7 @@ def test_prod_jev_stage_contract_enables_stage_values_only_on_process_hosts():
         expected = {
             'CONVERSATION_RELEVANCE_JEV_SHADOW_PERCENT': '100',
             'MEMORY_OWNER_JEV_SHADOW_PERCENT': '100',
-            'CONVERSATION_RELEVANCE_KEEP_ALL_PERCENT': '20',
+            'CONVERSATION_RELEVANCE_KEEP_ALL_PERCENT': '0',
             'CONVERSATION_RELEVANCE_JEV_SHADOW_DAILY_CAP': '60000',
             'MEMORY_OWNER_JEV_SHADOW_DAILY_CAP': '60000',
         }
@@ -3409,7 +3410,7 @@ def test_prod_jev_stage_contract_enables_stage_values_only_on_process_hosts():
     assert hosts == _JEV_PROCESS_CONVERSATION_HOSTS
     # backend-sync-backfill is not a shadow host but also processes conversations.
     backfill = dict(_manifest_env_blocks(prod))['cloud_run/backend-sync-backfill']
-    assert backfill['CONVERSATION_RELEVANCE_KEEP_ALL_PERCENT']['value'] == '20'
+    assert backfill['CONVERSATION_RELEVANCE_KEEP_ALL_PERCENT']['value'] == '0'
     assert backfill[CONVERSATION_RELEVANCE_JEV_ENABLED_ENV]['value'] == 'true'
     assert backfill['CONVERSATION_RELEVANCE_JEV_PERCENT']['value'] in {'1', '10', '50', '100'}
 
@@ -3512,7 +3513,8 @@ def test_mentor_pipeline_runtime_values(pipeline, kind):
         config = [{'name': 'MENTOR_PIPELINE', 'value': pipeline}]
     elif kind == 'binding':
         config = {'MENTOR_PIPELINE': {'env_var': 'MENTOR_PIPELINE', 'default': pipeline}}
-    assert bool(validate_mentor_pipeline(scope='host', config=config)) == (pipeline == 'typo')
+    # The legacy/v2 modes were removed: only cohort validates (no errors).
+    assert bool(validate_mentor_pipeline(scope='host', config=config)) == (pipeline != 'cohort')
 
 
 def test_production_speaker_match_scores_on_all_computing_and_persisting_hosts():
