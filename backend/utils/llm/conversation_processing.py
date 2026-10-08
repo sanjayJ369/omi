@@ -51,6 +51,7 @@ from utils.llm.action_item_normalization import normalize_action_item_due_dates 
 from utils.llm.meeting_notes_rich_prompts import NotesFrameImage, rich_static_instructions, screen_frames_message
 from utils.llm.meeting_notes_rich_prompts import rich_volatile_instructions
 from utils.llm.meeting_notes_presentation import enforce_conversation_note_presentation
+from utils.llm.conversation_title_people import general_title_static_instructions, with_title_people
 from utils.llm.meeting_notes_validation import (
     enforce_structured_presentation_contract,
     sanitize_structured_speaker_placeholders,
@@ -1325,7 +1326,9 @@ def _get_conversation_notes_legacy(
             extraction_parser.get_format_instructions(), _conversation_notes_static_instructions
         )
     else:
-        static_instructions = _conversation_notes_static_instructions(extraction_parser.get_format_instructions())
+        static_instructions = general_title_static_instructions(
+            extraction_parser.get_format_instructions(), _conversation_notes_static_instructions
+        )
     wake_word_rules = ''
     if episode_mode:
         if any(item.wake_word_invocation for item in episode_evidence or ()):
@@ -1386,7 +1389,7 @@ def _get_conversation_notes_legacy(
             **volatile_kwargs,
         )
     else:
-        volatile_instructions = _conversation_notes_volatile_instructions(**volatile_kwargs)
+        volatile_instructions = with_title_people(_conversation_notes_volatile_instructions(**volatile_kwargs), prefix)
     # BYOK is excluded: a BYOK key can route conv_structure off GPT-5.6, where
     # prompt_cache_breakpoint is not a valid content part. Anthropic rejects it
     # (system.0.prompt_cache_breakpoint: Extra inputs are not permitted) and
@@ -1461,6 +1464,7 @@ def _get_conversation_notes_legacy(
             messages=messages,
             extraction_parser=extraction_parser,
             transcript_segment_ids=prefix.transcript_segment_ids,
+            title_people=() if rich_mode else prefix.title_people,
             post_parse_validator=(
                 lambda value: (
                     validate_rich_meeting_notes(
